@@ -1,0 +1,42 @@
+{
+	"name": "Cyverse Tracker",
+	"version": "1.0",
+	"description": "Tracks User Inputs in the Cyverse Environment",
+	"manifest_version": 2,
+	"permissions": [
+		"tabs",
+        "storage",
+        "downloads",
+		"activeTab",
+		"declarativeContent"
+    ],
+	"browser_action": {
+		"default_popup": "popup.html",
+		"default_icon": {
+            "16": "images/get_started16.png",
+            "32": "images/get_started32.png",
+            "48": "images/get_started48.png",
+            "128": "images/get_started128.png"
+          }
+	},
+	"background": {
+		"page": "background.html"
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+      		"all_frames": true,
+      		"js": ["popup.js"]
+		},
+    	{
+      		"matches": ["*://*.de.cyverse.org/*"],
+      		"all_frames": true,
+      		"js": ["discoveryClicks.js"]
+    	},
+		{
+			"matches": ["*://*.dnasubway.cyverse.org/*"],
+			"all_frames": true,
+			"js": ["subwayClicks.js"]
+	  	}
+	]
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    button {
+      height: 100px;
+      width: 100px;
+      outline: black;
+    }
+  </style>
+  <link href="popup.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+  <div id="header">
+    <p>Data Science Tutorial Tracker</p>
+  </div>
+
+  <div>
+    
+    <p id='prompt' hidden='true'> Please enter your CyVerse ID: </p>
+    <br>
+    <br>
+
+    <input type="text" name="username" id='username' width=200px hidden='true'>
+    <br>
+    <br>
+    <input type="submit" class="fake-button" value="Submit" id='submit' width="100%" hidden='true'>
+  </div>
+
+
+
+  <a class="fake-button" id='discovery' hidden href="https://sites.google.com/cs.unc.edu/cyversetutorial/discovery"
+    target="_blank">Continue
+    to Discovery</a>
+  <a class="fake-button" id='shell' hidden href="https://sites.google.com/cs.unc.edu/cyversetutorial/shell"
+    target="_blank">Continue to
+    Shell</a>
+  <h3 style="font-weight:bold; text-align:center;">Save Discovery History</h3>
+  <input type='button' id='save_discovery' value='Download Discovery History'>
+  <h3 style="font-weight:bold; text-align:center;">Save Subway History</h3>
+  <input type='button' id='save_subway' value='Download Subway History'>
+  <br>
+  <br>
+
+
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Auto width -->
+  <button class="btn" id="download"> <i class="fa fa-download"></i> Download Your Log File
+    :)</button>
+
+
+
+  <script src="popup.js"></script>
+
+  <a id='discovery' hidden href="https://sites.google.com/cs.unc.edu/cyversetutorial/discovery" target="_blank">Continue
+    to Discovery</a>
+  <a id='shell' hidden href="https://sites.google.com/cs.unc.edu/cyversetutorial/shell" target="_blank">Continue to
+    Shell</a>
+
+
+
+
+
+</body>
+
+</html>
