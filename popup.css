@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     height: 200px;
-    width: 280px;
+    width: 380px;
     color: white;
 }
 
@@ -14,12 +14,12 @@ body {
     font-family: Arial;
     font-size: 10pt;
     position: fixed;
-    left: 60px;   
+    left: 110px;   
 }
 
 #submit {
  position: fixed;
- left: 120px;
+ left: 170px;
 }
 
 .fake-button{
@@ -37,7 +37,7 @@ body {
 
 #username {
  position: fixed;
- left: 60px;
+ left: 120px;
 }
 
 #header {
@@ -54,13 +54,13 @@ body {
 
 #discovery {
     position: fixed;
-    left: 80px;
+    left: 130px;
     top: 110px;
   }
 
 #shell {
     position: fixed;
-    left: 100px;
+    left: 150px;
     top: 110px;
 }
 
@@ -74,6 +74,16 @@ body {
   }
 
 #download{
+  height: 30%;
+  width: 100%;
+}
+
+#save_discovery{
+  height: 30%;
+  width: 100%;
+}
+
+#save_subway{
   height: 30%;
   width: 100%;
 }

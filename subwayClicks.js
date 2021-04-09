@@ -7,25 +7,25 @@ var clickedType = '';
 var word = '';
 var clickedElement = '';
 
-chrome.storage.local.get('num', function(result){
-	if(result.num != null) {
-	    numOfClicks += result.num;
+chrome.storage.local.get('subway_num', function(result){
+	if(result.subway_num != null) {
+	    numOfClicks += result.subway_num;
 	}
 });
-chrome.storage.local.get('loc', function(result){
-	if(result.loc != null) {
-    	clickList = result.loc;
+chrome.storage.local.get('subway_loc', function(result){
+	if(result.subway_loc != null) {
+    	clickList = result.subway_loc;
 	}
 });
-chrome.storage.local.get('time', function(result){
-	if(result.time != null) {
-    	timeStamps = result.time;
+chrome.storage.local.get('subway_time', function(result){
+	if(result.subway_time != null) {
+    	timeStamps = result.subway_time;
 	}
 });
 
-chrome.storage.local.get('url', function(result){
-	if(result.url != null) {
-    	urlList = result.url;
+chrome.storage.local.get('subway_url', function(result){
+	if(result.subway_url != null) {
+    	urlList = result.subway_url;
 	}
 });
 
@@ -147,13 +147,13 @@ function clickListener(e) {
 	urlList.push(window.location.toString());
 	//comment out next line for stopping the annoying alerts
 	// alert(clickList);
-	chrome.storage.local.set({ 'num': numOfClicks }, function(){
+	chrome.storage.local.set({ 'subway_num': numOfClicks }, function(){
 	});
-	chrome.storage.local.set({ 'loc': clickList }, function(){
+	chrome.storage.local.set({ 'subway_loc': clickList }, function(){
 	});
-	chrome.storage.local.set({ 'time': timeStamps }, function(){
+	chrome.storage.local.set({ 'subway_time': timeStamps }, function(){
 	});
-	chrome.storage.local.set({ 'url': urlList }, function(){
+	chrome.storage.local.set({ 'subway_url': urlList }, function(){
 	});
 
 	if(clickList.length == timeStamps.length) {
@@ -171,7 +171,7 @@ function clickListener(e) {
 	}
 
 
-	chrome.storage.local.set({ 'list': finalList }, function(){
+	chrome.storage.local.set({ 'subway_list': finalList }, function(){
 	});
 }
 

@@ -14,7 +14,7 @@ function record() {
     });
 
     MyArray.push(d);
-    MyArray.push(url);
+    // MyArray.push(url);
 
 }
 
@@ -31,10 +31,10 @@ chrome.runtime.onMessage.addListener(function(request,sender,sendResponse){
         vLink.setAttribute('download', vName );
         vLink.click();
     } else if (request.message == "Discovery") {
-      chrome.storage.local.get('list', function(result){
-        if(result.list != null) {
+      chrome.storage.local.get('discovery_list', function(result){
+        if(result.discovery_list != null) {
             chrome.downloads.download({
-                    url: "data:text/plain," + result.list,
+                    url: "data:text/plain," + result.discovery_list,
                     filename: "discovery.txt",
                     conflictAction: "overwrite", 
                     saveAs: false,
@@ -42,11 +42,11 @@ chrome.runtime.onMessage.addListener(function(request,sender,sendResponse){
         }
       });
     } else if (request.message == "Subway") {
-      chrome.storage.local.get('list', function(result){
-        if(result.list != null) {
+      chrome.storage.local.get('subway_list', function(result){
+        if(result.subway_list != null) {
           var data = "";
-          for (var i = 0; i < result.list.length; i++) {
-                data += result.list[i] + ",\n";
+          for (var i = 0; i < result.subway_list.length; i++) {
+                data += result.subway_list[i] + ",\n";
           }
           data = data.replace(/#/g, "%23");          
           chrome.downloads.download({

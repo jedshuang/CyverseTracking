@@ -8,29 +8,29 @@ var word = '';
 var typing = 0;
 // var cut = 0;
 
-chrome.storage.local.get('num', function(result){
-	if(result.num != null) {
-	    numOfClicks += result.num;
+chrome.storage.local.get('discovery_num', function(result){
+	if(result.discovery_num != null) {
+	    numOfClicks += result.discovery_num;
 	}
 });
-chrome.storage.local.get('loc', function(result){
-	if(result.loc != null) {
-    	clickList = result.loc;
+chrome.storage.local.get('discovery_loc', function(result){
+	if(result.discovery_loc != null) {
+    	clickList = result.discovery_loc;
 	}
 });
-chrome.storage.local.get('type', function(result){
-  if(result.type != null) {
-      typing = result.type;
+chrome.storage.local.get('discovery_type', function(result){
+  if(result.discovery_type != null) {
+      typing = result.discovery_type;
   }
 });
-chrome.storage.local.get('time', function(result){
-  if(result.time != null) {
-      timeStamps = result.time;
+chrome.storage.local.get('discovery_time', function(result){
+  if(result.discovery_time != null) {
+      timeStamps = result.discovery_time;
   }
 });
-chrome.storage.local.get('url', function(result){
-  if(result.url != null) {
-      urlList = result.url;
+chrome.storage.local.get('discovery_url', function(result){
+  if(result.discovery_url != null) {
+      urlList = result.discovery_url;
   }
 });
 
@@ -121,15 +121,15 @@ function clickListener(e) {
   //alert(clickList);
   //alert(clickedElement);
 	//alert(numOfClicks + ': ' + clickList);
-	chrome.storage.local.set({ 'num': numOfClicks }, function(){
+	chrome.storage.local.set({ 'discovery_num': numOfClicks }, function(){
 	});
-	chrome.storage.local.set({ 'loc': clickList }, function(){
+	chrome.storage.local.set({ 'discovery_loc': clickList }, function(){
 	});
-  chrome.storage.local.set({ 'type': typing }, function(){
+  chrome.storage.local.set({ 'discovery_type': typing }, function(){
   });
-  chrome.storage.local.set({ 'time': timeStamps }, function() {
+  chrome.storage.local.set({ 'discovery_time': timeStamps }, function() {
   });
-    chrome.storage.local.set({ 'url': urlList }, function(){
+    chrome.storage.local.set({ 'discovery_url': urlList }, function(){
   });
 
 
@@ -148,7 +148,7 @@ function clickListener(e) {
   }
 
 
-  chrome.storage.local.set({ 'list': finalList }, function(){
+  chrome.storage.local.set({ 'discovery_list': finalList }, function(){
   });
 }
 
